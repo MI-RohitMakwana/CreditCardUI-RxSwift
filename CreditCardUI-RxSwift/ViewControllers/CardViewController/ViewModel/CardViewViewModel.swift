@@ -21,9 +21,47 @@ protocol ValidationViewModel {
     func transform(input: Input) -> Output
 }
 
+struct CardData  {
+    let cardHolderName: String
+    let cardNumber: String
+    let validFromDate: String
+    let validThruDate : String
+    let cvvNumber : String
+}
+
 class CardViewViewModel: ValidationViewModel {
 
     func transform(input: Input) -> Output {
+
+        let fieldsObservable = Observable.combineLatest(input.cardHolderName.asObservable(),
+                                          input.cardNumber.asObservable(),
+                                          input.validFromDate.asObservable(),
+                                          input.validThruDate.asObservable(),
+                                          input.cvvNumber.asObservable())
+
+        let isEnableAdd = fieldsObservable
+            .map { (cardHolderName, cardNumber, validFromDate, validThruDate, cvvNumber) in
+                return cardHolderName.count > 5 &&
+                    cardHolderName.count < 40 &&
+                    cardNumber.count == 19 &&
+                    validFromDate.count == 5 &&
+                    validThruDate.count == 5 &&
+                    cvvNumber.count == 3
+            }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: false)
+
+        let cardAdded = input.addButtonEvent.asObservable()
+            .withLatestFrom(fieldsObservable)
+            .map { values in
+                return CardData(cardHolderName: values.0,
+                                cardNumber: values.1,
+                                validFromDate: values.2,
+                                validThruDate: values.3,
+                                cvvNumber: values.4)
+            }
+            .asDriver(onErrorDriveWith: .empty())
+        
         let cardHolderName = input.cardHolderName
             .scan([]) { (previous, current) in
                 return Array(previous + [current]).suffix(2)
@@ -40,13 +78,13 @@ class CardViewViewModel: ValidationViewModel {
                 return Array(previous + [current]).suffix(2)
             }
             .map({ lastTwoOptions -> String in
-                
                 guard let previous = lastTwoOptions.first,
                       let current = lastTwoOptions.last else {
                     return ""
                 }
-                return current.format(ValidateFormate.cardNumer.rawValue,
-                                      oldString: previous)
+                let cardNumber = current.format(ValidateFormate.cardNumer.rawValue,
+                                        oldString: previous)
+                return cardNumber
             })
             .asDriver(onErrorDriveWith: .empty())
 
@@ -59,8 +97,9 @@ class CardViewViewModel: ValidationViewModel {
                       let current = lastTwoOptions.last else {
                     return ""
                 }
-                return current.format(ValidateFormate.date.rawValue,
-                                      oldString: previous)
+                let validFromDate = current.format(ValidateFormate.date.rawValue,
+                                                oldString: previous)
+                return validFromDate
             })
             .asDriver(onErrorDriveWith: .empty())
 
@@ -73,8 +112,9 @@ class CardViewViewModel: ValidationViewModel {
                       let current = lastTwoOptions.last else {
                     return ""
                 }
-                return current.format(ValidateFormate.date.rawValue,
-                                      oldString: previous)
+                let validFromDate = current.format(ValidateFormate.date.rawValue,
+                                                oldString: previous)
+                return validFromDate
             })
             .asDriver(onErrorDriveWith: .empty())
 
@@ -83,13 +123,13 @@ class CardViewViewModel: ValidationViewModel {
                 return Array(previous + [current]).suffix(2)
             }
             .map({ lastTwoOptions -> String in
-                
                 guard let previous = lastTwoOptions.first,
                       let current = lastTwoOptions.last else {
                     return ""
                 }
-                return current.format(ValidateFormate.cvv.rawValue,
-                                      oldString: previous)
+                let cvvNumber = current.format(ValidateFormate.cvv.rawValue,
+                                                oldString: previous)
+                return cvvNumber
             })
             .asDriver(onErrorDriveWith: .empty())
 
@@ -97,7 +137,9 @@ class CardViewViewModel: ValidationViewModel {
                       formatedCardNumber: cardNumber,
                       formatedValidFromDate: validFromDate,
                       formatedvalidThruDate: validThruDate,
-                      formatedCVVumber: cvvNumber)
+                      formatedCVVumber: cvvNumber,
+                      cardAdded: cardAdded,
+                      isEnableAdd: isEnableAdd)
     }
 }
 
@@ -108,6 +150,7 @@ extension CardViewViewModel {
         let validFromDate: Observable<String>
         let validThruDate : Observable<String>
         let cvvNumber : Observable<String>
+        let addButtonEvent : Observable<Void>
     }
 
     struct Output {
@@ -116,5 +159,7 @@ extension CardViewViewModel {
         let formatedValidFromDate: Driver<String>
         let formatedvalidThruDate: Driver<String>
         let formatedCVVumber: Driver<String>
+        let cardAdded: Driver<CardData>
+        let isEnableAdd: Driver<Bool>
     }
 }

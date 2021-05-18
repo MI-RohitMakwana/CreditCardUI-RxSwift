@@ -17,7 +17,7 @@ protocol CreditCardViewProtocol {
     func onCVVNumberChanged(_ text: String)
 }
 
-class CreditCardView: UIView {
+final class CreditCardView: UIView {
 
     // MARK: - IBOutlets
     @IBOutlet fileprivate weak var frontView: UIView!
@@ -63,7 +63,6 @@ class CreditCardView: UIView {
             WithColors: [UIColor.cardGradientTop.cgColor,
                          UIColor.cardGradientBottom.cgColor]
         )
-
         self.backView.applyGradient(
             WithColors: [UIColor.cardGradientTop.cgColor,
                          UIColor.cardGradientBottom.cgColor]
@@ -130,7 +129,7 @@ extension CreditCardView: CreditCardViewProtocol {
     func onCVVNumberChanged(_ text: String) {
         if text.isEmpty {
             self.cvvNumber.accept(CardDefaultValues.cvvNumber)
-        } else { //"●●● ●"
+        } else {
             self.cvvNumber.accept(text.map { _ in return "●" }.joined())
         }
     }

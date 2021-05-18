@@ -27,4 +27,15 @@ extension UIView {
         gradient.frame = self.bounds
         self.layer.insertSublayer(gradient, at: 0)
     }
+
+    func applycornerRadius(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
+    }
+
+    func applyBorder(color: UIColor, width: CGFloat) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
 }

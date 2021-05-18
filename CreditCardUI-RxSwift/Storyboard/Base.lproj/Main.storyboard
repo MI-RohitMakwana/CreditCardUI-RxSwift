@@ -13,12 +13,12 @@
         <!--Card View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="CardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CardViewController" customModule="RxSwift_CardUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CardViewController" customModule="CreditCardUI_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUD-L3-XOv" customClass="CreditCardView" customModule="RxSwift_CardUI" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUD-L3-XOv" customClass="CreditCardView" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
                                 <rect key="frame" x="57" y="60" width="300" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -31,11 +31,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-hv-ozF">
-                                <rect key="frame" x="25" y="290" width="364" height="214"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-hv-ozF">
+                                <rect key="frame" x="25" y="290" width="364" height="185"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD HOLDER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGj-Dc-hlW" customClass="LineTextField" customModule="RxSwift_CardUI" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="364" height="45"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD HOLDER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGj-Dc-hlW" customClass="LineTextField" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xVP-Sm-U45"/>
@@ -43,8 +43,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7PU-Id-CYO" customClass="LineTextField" customModule="RxSwift_CardUI" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="364" height="45"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CARD NUMBER" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7PU-Id-CYO" customClass="LineTextField" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="364" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fWv-c0-0NS"/>
@@ -53,20 +53,20 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7ky-yJ-pK5">
-                                        <rect key="frame" x="0.0" y="84" width="364" height="45"/>
+                                        <rect key="frame" x="0.0" y="120" width="364" height="65"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-bR-ObP">
-                                                <rect key="frame" x="142" y="0.0" width="80" height="45"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kkP-bR-ObP">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="65"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALID FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6b-fF-6nU">
-                                                        <rect key="frame" x="0.0" y="10" width="25" height="25"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="VALID FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6b-fF-6nU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/YY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rfa-dh-NPm" customClass="LineTextField" customModule="RxSwift_CardUI" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="0.0" width="60" height="45"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/YY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rfa-dh-NPm" customClass="DateTextField" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25" width="80" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="BRW-YU-Yys"/>
@@ -79,18 +79,18 @@
                                                     <constraint firstItem="Rfa-dh-NPm" firstAttribute="width" secondItem="E6b-fF-6nU" secondAttribute="width" id="MEG-9m-ZhT"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-13-bHG">
-                                                <rect key="frame" x="142" y="2" width="80" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-13-bHG">
+                                                <rect key="frame" x="142" y="0.0" width="80" height="65"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALID THRU" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwW-oN-fvo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="VALID THRU" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwW-oN-fvo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/YY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va1-Ot-LZ6" customClass="LineTextField" customModule="RxSwift_CardUI" customModuleProvider="target">
-                                                        <rect key="frame" x="-142" y="20" width="364" height="0.0"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM/YY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Va1-Ot-LZ6" customClass="DateTextField" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25" width="80" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="yo5-cy-Ng4"/>
@@ -103,11 +103,11 @@
                                                     <constraint firstItem="Va1-Ot-LZ6" firstAttribute="width" secondItem="wwW-oN-fvo" secondAttribute="width" id="CVt-xE-XG5"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="suM-SX-gNO">
-                                                <rect key="frame" x="137" y="2" width="90" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="suM-SX-gNO">
+                                                <rect key="frame" x="274" y="0.0" width="90" height="65"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibE-W4-M4U">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="25"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibE-W4-M4U">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="Sma-Jl-MmR"/>
@@ -116,8 +116,8 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="***" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="224-yk-Zt3" customClass="LineTextField" customModule="RxSwift_CardUI" customModuleProvider="target">
-                                                        <rect key="frame" x="40" y="0.0" width="30" height="45"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="***" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="224-yk-Zt3" customClass="LineTextField" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="25" width="90" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="6br-sf-xmH"/>
@@ -134,20 +134,54 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tSI-Sz-kFD">
+                                <rect key="frame" x="207" y="500" width="40" height="40"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XT-iL-6NR">
+                                        <rect key="frame" x="227" y="468" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Kyz-3q-ZdV"/>
+                                            <constraint firstAttribute="height" constant="50" id="hyd-y0-1dr"/>
+                                        </constraints>
+                                        <state key="normal" title="Clear"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMr-ew-ggZ">
+                                        <rect key="frame" x="20" y="20" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="DjB-5U-bKm"/>
+                                            <constraint firstAttribute="height" constant="50" id="yuK-Xj-7sZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Add"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s6c-C6-seA">
+                                <rect key="frame" x="0.0" y="550" width="414" height="338"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="s6c-C6-seA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0aF-Iy-DtA"/>
+                            <constraint firstItem="s6c-C6-seA" firstAttribute="top" secondItem="tSI-Sz-kFD" secondAttribute="bottom" constant="10" id="8FA-yl-ZTM"/>
+                            <constraint firstAttribute="trailing" secondItem="s6c-C6-seA" secondAttribute="trailing" id="8k1-hh-OqZ"/>
                             <constraint firstItem="ZXZ-hv-ozF" firstAttribute="top" secondItem="qUD-L3-XOv" secondAttribute="bottom" constant="30" id="AHb-9k-oKw"/>
                             <constraint firstItem="qUD-L3-XOv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="DTT-5N-RnC"/>
+                            <constraint firstItem="tSI-Sz-kFD" firstAttribute="top" secondItem="ZXZ-hv-ozF" secondAttribute="bottom" constant="25" id="IOL-2A-tgl"/>
+                            <constraint firstAttribute="bottom" secondItem="s6c-C6-seA" secondAttribute="bottom" id="Jcr-1G-9w4"/>
+                            <constraint firstItem="tSI-Sz-kFD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfe-NQ-Qw3"/>
                             <constraint firstItem="qUD-L3-XOv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="msA-4Q-0vB"/>
                             <constraint firstItem="ZXZ-hv-ozF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="rn5-GN-eSW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZXZ-hv-ozF" secondAttribute="trailing" constant="25" id="v0X-sl-MmD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="iMr-ew-ggZ" id="rZy-o3-n1T"/>
                         <outlet property="cardHolderTextField" destination="YGj-Dc-hlW" id="jsc-q9-HeG"/>
                         <outlet property="cardNumberTextField" destination="7PU-Id-CYO" id="gB8-VG-LfH"/>
+                        <outlet property="cardTableView" destination="s6c-C6-seA" id="me5-Yu-KpN"/>
+                        <outlet property="clearButton" destination="1XT-iL-6NR" id="4YS-2Q-Hyq"/>
                         <outlet property="creditCardView" destination="qUD-L3-XOv" id="jjl-Em-7BC"/>
                         <outlet property="cvvTextField" destination="224-yk-Zt3" id="jo6-Mk-UHT"/>
                         <outlet property="validFromTextField" destination="Rfa-dh-NPm" id="Vmg-9t-qrZ"/>

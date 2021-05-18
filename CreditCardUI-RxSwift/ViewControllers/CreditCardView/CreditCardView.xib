@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditCardView" customModule="RxSwift_CardUI" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditCardView" customModule="CreditCardUI_RxSwift" customModuleProvider="target">
             <connections>
                 <outlet property="backView" destination="2oD-Nq-V5v" id="VLP-aU-ZuY"/>
                 <outlet property="cardHolderNameLabel" destination="QQd-HK-eUB" id="bZY-3m-Oh1"/>
@@ -50,11 +50,11 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMF-sx-KhT">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMF-sx-KhT" userLabel="cvv">
                                     <rect key="frame" x="180" y="124" width="0.0" height="0.0"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="eC5-zb-UWH"/>
+                                        <constraint firstAttribute="width" constant="45" id="eC5-zb-UWH"/>
                                         <constraint firstAttribute="height" constant="25" id="iId-YO-T2E"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
